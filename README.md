@@ -1,5 +1,3 @@
-# Seminararbeit-Latex-Template
-
 # Seminararbeit LaTeX-Vorlage
 
 ## Übersicht
