@@ -12,29 +12,30 @@
 \input{content/titelseite}
 \clearpage
 
-% INHALTSVERZEICHNIS (mit römischen Ziffern)
-\pagenumbering{roman}
-\setcounter{page}{1}
-\pagestyle{fancy}
+% INHALTSVERZEICHNIS (ohne Seitenzahl)
+% Wir behalten gobble für keine Seitenzahlen bei
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \tableofcontents
 \clearpage
 
-% ABKÜRZUNGSVERZEICHNIS
+% ABKÜRZUNGSVERZEICHNIS (beginnt mit römisch i)
+\pagenumbering{roman} % Setzt römische Ziffern (i, ii, iii, ...)
+\setcounter{page}{1} % Beginnt mit i
+\pagestyle{fancy}
 \phantomsection
 \section*{I. Abkürzungsverzeichnis}
 \addcontentsline{toc}{section}{I. Abkürzungsverzeichnis}
 \input{content/abkuerzungen}
 \clearpage
 
-% ABBILDUNGSVERZEICHNIS
+% ABBILDUNGSVERZEICHNIS (sollte automatisch Seite ii sein)
 \phantomsection
 \addcontentsline{toc}{section}{II. Abbildungsverzeichnis}
 \listoffigures
 \thispagestyle{fancy}
 \clearpage
 
-% TABELLENVERZEICHNIS
+% TABELLENVERZEICHNIS (sollte automatisch Seite iii sein)
 \phantomsection
 \addcontentsline{toc}{section}{III. Tabellenverzeichnis}
 \listoftables
