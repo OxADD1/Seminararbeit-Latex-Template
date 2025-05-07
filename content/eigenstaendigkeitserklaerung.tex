@@ -1,16 +1,49 @@
+% Erstellt eine Überschrift "Eigenständigkeitserklärung" ohne Nummerierung durch den *
 \section*{Eigenständigkeitserklärung}
+% Fügt die Eigenständigkeitserklärung ins Inhaltsverzeichnis ein, obwohl sie keine Nummer hat
 \addcontentsline{toc}{section}{Eigenständigkeitserklärung}
 
+% Fügt 1 cm vertikalen Abstand ein, um den Text von der Überschrift zu trennen
 \vspace{1cm}
 
+% Der eigentliche Text der Eigenständigkeitserklärung
 Hiermit erkläre ich, dass ich die vorliegende Arbeit selbstständig und ohne fremde Hilfe verfasst und keine anderen als die angegebenen Hilfsmittel verwendet habe. Alle Stellen oder Passagen der vorliegenden Arbeit, die anderen Quellen entnommen wurden, sind als solche kenntlich gemacht. Diese Arbeit wurde in gleicher oder ähnlicher Form noch keiner Prüfungsbehörde vorgelegt.
 
+% Fügt 2 cm vertikalen Abstand ein für den Unterschriftsbereich
 \vspace{2cm}
 
+% Verhindert Einrückung des folgenden Textes
 \noindent
+% Erstellt eine Tabelle mit zwei linksbündigen Spalten (ll)
 \begin{tabular}{ll}
+% Erzeugt eine horizontale Linie nur unter der ersten Spalte
 \cline{1-1}
+% Erster Eintrag "Ort, Datum", dann Spaltentrenner &, dann Zeilenumbruch mit 1cm Abstand nach unten
 Ort, Datum & \\[1cm]
+% Zweite horizontale Linie unter der ersten Spalte
 \cline{1-1}
+% Zweiter Eintrag "Unterschrift" und Zeilenende
 Unterschrift & \\
 \end{tabular}
+
+% ======== UM EIN BILD MIT UNTERSCHRIFT EINZUFÜGEN ========
+% Variante 1: Unterschrift als eingescanntes Bild
+% Füge folgenden Code anstelle der Tabelle ein:
+% \noindent
+% \begin{tabular}{ll}
+% \cline{1-1}
+% Ort, Datum & \\[1cm]
+% \cline{1-1}
+% \raisebox{-0.5cm}{\includegraphics[width=4cm,height=1cm]{images/unterschrift.png}} & \\
+% \end{tabular}
+%
+% Hierbei musst du:
+% 1. Deine Unterschrift einscannen und als PNG/JPG speichern
+% 2. Die Datei in den images-Ordner legen
+% 3. Die Größe (width=4cm,height=1cm) an deine Unterschrift anpassen
+% 4. Mit \raisebox kannst du die vertikale Position anpassen
+%
+% Variante 2: Platz für handschriftliche Unterschrift lassen
+% Die aktuelle Lösung ist bereits gut dafür geeignet, 
+% da sie Platz für eine handschriftliche Unterschrift bietet.
+% Du druckst das Dokument aus und unterschreibst dann von Hand.
