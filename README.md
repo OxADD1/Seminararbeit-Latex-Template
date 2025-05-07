@@ -49,76 +49,6 @@ seminararbeit/
 4. Klicke auf "Installieren"
 5. Starte VS Code neu
 
-### 4. Konfiguration von LaTeX Workshop in VS Code
-
-1. Öffne die Einstellungen in VS Code (`⌘+,`)
-2. Suche nach "latex-workshop.latex.tools"
-3. Klicke auf "In settings.json bearbeiten"
-4. Füge folgende Konfiguration hinzu oder passe sie an:
-
-```json
-"latex-workshop.latex.tools": [
-    {
-        "name": "pdflatex",
-        "command": "pdflatex",
-        "args": [
-            "-synctex=1",
-            "-interaction=nonstopmode",
-            "-file-line-error",
-            "%DOC%"
-        ]
-    },
-    {
-        "name": "biber",
-        "command": "biber",
-        "args": [
-            "%DOCFILE%"
-        ]
-    }
-],
-"latex-workshop.latex.recipes": [
-    {
-        "name": "pdflatex ➞ biber ➞ pdflatex × 2",
-        "tools": [
-            "pdflatex",
-            "biber",
-            "pdflatex",
-            "pdflatex"
-        ]
-    }
-]
-```
-
-### 5. Projekt einrichten
-
-1. Klone oder entpacke die Seminararbeit-Vorlage in einen Ordner
-2. Öffne diesen Ordner in VS Code (`Datei > Ordner öffnen...` oder `⌘+O`)
-3. Öffne die Datei `main.tex`
-
-## Voraussetzungen
-
-- LaTeX-Distribution (MacTeX für macOS)
-- Biber (für die Literaturverwaltung, wird mit MacTeX installiert)
-- Visual Studio Code mit LaTeX Workshop-Erweiterung
-
-## Kompilieren der Arbeit
-
-### Mit Terminal
-
-Um die Seminararbeit zu kompilieren, führe folgende Befehle in dieser Reihenfolge aus:
-
-```
-pdflatex main.tex
-biber main
-pdflatex main.tex
-pdflatex main.tex
-```
-
-### Mit VS Code
-
-1. Öffne `main.tex` in VS Code
-2. Drücke `⌘+⌥+B` (Build) oder klicke auf das Play-Symbol in der rechten oberen Ecke
-3. Wähle "Recipe: pdflatex ➞ biber ➞ pdflatex × 2"
 
 ## Beschreibung der Dateien
 
@@ -274,27 +204,3 @@ Wenn du Git zur Versionskontrolle verwendest, solltest du eine `.gitignore`-Date
 *.run.xml
 *.synctex.gz
 ```
-
-## Kontakt/Support
-
-Bei Fragen oder Problemen mit dieser Vorlage:
-- Wende dich an das Rechenzentrum oder die LaTeX-Ansprechperson deiner Hochschule
-- Konsultiere die [LaTeX-Dokumentation](https://www.latex-project.org/help/documentation/)
-- Stelle Fragen auf Plattformen wie [TeX Stack Exchange](https://tex.stackexchange.com/)
-
-## Häufige LaTeX-Probleme und Lösungen
-
-### Problem: Literaturverzeichnis erscheint nicht
-**Lösung**: Überprüfe, ob du alle Kompilierungsschritte ausgeführt hast (pdflatex → biber → pdflatex → pdflatex). Stelle sicher, dass deine .bib-Datei korrekt formatiert ist und dass du Quellen im Text zitiert hast.
-
-### Problem: Bilder werden nicht angezeigt
-**Lösung**: Überprüfe den Pfad zu den Bildern. In dieser Vorlage sollten alle Bilder im Ordner `images/` liegen. Verwende keine Leerzeichen oder Sonderzeichen in Dateinamen.
-
-### Problem: Kompilierungsfehler "File not found"
-**Lösung**: Stelle sicher, dass alle Dateien vorhanden sind und die Pfade korrekt sind. Überprüfe Groß- und Kleinschreibung, da einige Betriebssysteme (z.B. macOS) Groß- und Kleinschreibung unterscheiden.
-
-### Problem: Deutsch-spezifische Zeichen (ä, ö, ü, ß) werden nicht korrekt angezeigt
-**Lösung**: Stelle sicher, dass die Dateien in UTF-8 kodiert sind und dass du `\usepackage[utf8]{inputenc}` sowie `\usepackage[ngerman]{babel}` verwendest.
-
-### Problem: Warnungen bei der Kompilierung
-**Lösung**: Die meisten Warnungen beeinträchtigen das Endergebnis nicht. Lies die Warnungen, um zu verstehen, was das Problem sein könnte. Häufige Warnungen betreffen Overfull/Underfull hboxes (zu lange/kurze Zeilen), die meist ignoriert werden können.
