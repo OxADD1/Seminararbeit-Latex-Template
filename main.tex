@@ -7,74 +7,69 @@
 % BEGINN DES DOKUMENTS
 \begin{document}
 
-% TITELSEITE
+% TITELSEITE (ohne Seitennummer)
+\pagenumbering{gobble} % Keine Seitenzahlen
 \input{content/titelseite}
+\clearpage
 
-% INHALTSVERZEICHNIS
-\pagenumbering{gobble}
+% INHALTSVERZEICHNIS (mit römischen Ziffern)
+\pagenumbering{roman}
+\setcounter{page}{1}
+\pagestyle{fancy}
 \renewcommand{\contentsname}{Inhaltsverzeichnis}
 \tableofcontents
 \clearpage
 
-% ABKÜRZUNGSVERZEICHNIS - Seite 2
-\pagenumbering{arabic}
-\setcounter{page}{2}
-\pagestyle{fancy}
+% ABKÜRZUNGSVERZEICHNIS
 \phantomsection
 \section*{I. Abkürzungsverzeichnis}
 \addcontentsline{toc}{section}{I. Abkürzungsverzeichnis}
 \input{content/abkuerzungen}
 \clearpage
 
-% ABBILDUNGSVERZEICHNIS - Seite 3
-\pagestyle{fancy}
+% ABBILDUNGSVERZEICHNIS
 \phantomsection
 \addcontentsline{toc}{section}{II. Abbildungsverzeichnis}
 \listoffigures
 \thispagestyle{fancy}
 \clearpage
 
-% TABELLENVERZEICHNIS - Seite 4
-\pagestyle{fancy}
+% TABELLENVERZEICHNIS
 \phantomsection
 \addcontentsline{toc}{section}{III. Tabellenverzeichnis}
 \listoftables
 \thispagestyle{fancy}
 \clearpage
 
-% HAUPTTEIL BEGINNT - Seite 5
-\phantomsection
-\setcounter{page}{5}
+% HAUPTTEIL BEGINNT - Mit arabischen Zahlen ab Seite 1
+\pagenumbering{arabic}
+\setcounter{page}{1}
 \pagestyle{fancy}
 
 % Einführung
+\phantomsection
 \input{content/einfuehrung}
 \clearpage
 
-% Kapitel 2
+% Kapitel 2 
 \phantomsection
-\setcounter{page}{6}
-\pagestyle{fancy}
 \input{content/kapitel2}
 \clearpage
 
-% Kapitel 3
+% Kapitel 3 
 \phantomsection
-\setcounter{page}{7}
-\pagestyle{fancy}
 \input{content/kapitel3}
 \clearpage
 
+
 % Fazit
 \phantomsection
-\setcounter{page}{8}
-\pagestyle{fancy}
 \input{content/fazit}
 \clearpage
 
-% LITERATURVERZEICHNIS
+% LITERATURVERZEICHNIS - Mit römischen Zahlen
 \phantomsection
-\pagenumbering{Roman}
+\pagenumbering{Roman} % Großgeschriebene römische Zahlen
 \setcounter{page}{1}
 \pagestyle{fancy}
 \section*{Literaturverzeichnis}
@@ -84,8 +79,7 @@
 % EIGENSTÄNDIGKEITSERKLÄRUNG
 \phantomsection
 \clearpage
-\setcounter{page}{2} % Fortsetzung der römischen Seitennummerierung
-\pagestyle{fancy}
+% Römische Nummerierung läuft automatisch weiter
 \input{content/eigenstaendigkeitserklaerung}
 
 \end{document}
