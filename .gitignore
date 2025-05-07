@@ -1,0 +1,49 @@
+# LaTeX temporäre Dateien
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.idx
+*.ilg
+*.ind
+*.nav
+*.snm
+*.vrb
+*.dvi
+
+# Backup-Dateien
+*~
+*.bak
+*.backup
+*.swp
+*.swo
+
+# Build-Verzeichnisse
+_build/
+build/
+
+# macOS spezifische Dateien
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# VS Code spezifische Dateien
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# PDF-Dateien (optional)
+# *.pdf
